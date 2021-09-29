@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [url, setUrl] = useState('')
+
+  const submit = (e: any) => {
+    e.preventDefault();
+    const fullPath = `http://${url}`;
+    window.location.href = fullPath
+    console.log(fullPath)
+  }
+
+  const update = (e: any) => {
+    setUrl(e.target.value)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <form onSubmit={submit} style={{ width: 510, paddingLeft: 5, paddingRight: 5, backgroundColor: "#333333", position: "absolute", display: 'flex', left: '50%', top: '50%', transform: "translate(-50%, -50%)", fontSize: 30 }}>
+      <input style={{ fontSize: 30, width: 400 }} placeholder="192.XXX.XX.X:PORT" value={url} onChange={update} />
+      <button type="submit" style={{ fontSize: 30, width: 100 }} > Go </button>
+    </form>
   );
 }
 
