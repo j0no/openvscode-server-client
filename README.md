@@ -1,6 +1,6 @@
 # OpenVSCode Server - Client
 
- Gitpod recently released [OpenVSCode Server](https://www.gitpod.io/blog/openvscode-server-launch)j so why not have a dedicated client/browser for it.
+ Gitpod recently released [OpenVSCode Server](https://www.gitpod.io/blog/openvscode-server-launch) so why not have a dedicated client/browser for it.
 
  At the moment this is just a proof of concept.
 
